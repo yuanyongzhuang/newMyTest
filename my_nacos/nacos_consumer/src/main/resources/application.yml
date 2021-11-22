@@ -6,3 +6,5 @@ spring:
   nacos:
     discovery:
       server-addr: 127.0.0.1:8848
+      #不注入nacos只是一个消费者
+#      register-enabled: false
