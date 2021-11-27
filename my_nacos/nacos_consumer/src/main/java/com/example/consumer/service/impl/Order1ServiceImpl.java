@@ -14,5 +14,6 @@ public class Order1ServiceImpl implements TestOrderHandler {
     @Override
     public void setOrderImpl() {
         System.out.println("order 1 service");
+        throw new RuntimeException("人为异常，验证@order注解在异常下的运行。");
     }
 }
