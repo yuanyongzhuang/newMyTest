@@ -7,6 +7,7 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.client.RestTemplate;
 
+import java.util.HashMap;
 import java.util.List;
 
 /**
@@ -42,5 +43,13 @@ public class SumerNacosController {
         orderHandlers.forEach(order ->{
             order.setOrderImpl();
         });
+    }
+
+    public static void main(String[] args) {
+        HashMap<String,String> hashMap = new HashMap<>();
+        String s = hashMap.putIfAbsent("12", "23");
+        String s1 = hashMap.putIfAbsent("23", "34");
+        String s2 = hashMap.putIfAbsent("23", "45");
+        System.out.println("s="+s+";s1="+s1+";s2="+s2);
     }
 }
