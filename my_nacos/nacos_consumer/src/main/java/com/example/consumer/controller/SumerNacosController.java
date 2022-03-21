@@ -1,5 +1,6 @@
 package com.example.consumer.controller;
 
+import com.example.consumer.dto.TestDto;
 import com.example.consumer.remote.RemoteClient;
 import com.example.consumer.service.TestOrderHandler;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -40,9 +41,11 @@ public class SumerNacosController {
      */
     @GetMapping("/testOrder")
     public void testOrder(){
+        TestDto testDto = new TestDto();
         orderHandlers.forEach(order ->{
-            order.setOrderImpl();
+            order.setOrderImpl(testDto);
         });
+        System.out.println(testDto.toString());
     }
 
     public static void main(String[] args) {

@@ -1,5 +1,7 @@
 package com.example.consumer.service;
 
+import com.example.consumer.dto.TestDto;
+
 /**
  * 测试@Reder注解
  * @author yyz
@@ -7,5 +9,5 @@ package com.example.consumer.service;
  */
 public interface TestOrderHandler {
 
-  void setOrderImpl();
+  void setOrderImpl(TestDto testDto);
 }

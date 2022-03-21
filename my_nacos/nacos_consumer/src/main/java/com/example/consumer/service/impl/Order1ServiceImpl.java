@@ -1,5 +1,6 @@
 package com.example.consumer.service.impl;
 
+import com.example.consumer.dto.TestDto;
 import com.example.consumer.service.TestOrderHandler;
 import org.springframework.core.annotation.Order;
 import org.springframework.stereotype.Service;
@@ -12,8 +13,9 @@ import org.springframework.stereotype.Service;
 @Service("order1ServiceImpl")
 public class Order1ServiceImpl implements TestOrderHandler {
     @Override
-    public void setOrderImpl() {
+    public void setOrderImpl(TestDto testDto) {
+        testDto.setOrder1("order 1 service");
         System.out.println("order 1 service");
-        throw new RuntimeException("人为异常，验证@order注解在异常下的运行。");
+//        throw new RuntimeException("人为异常，验证@order注解在异常下的运行。");
     }
 }
